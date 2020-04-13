@@ -29,17 +29,3 @@ echo "::set-env name=VERSION::$VERSION"
 echo "::set-env name=IS_RELEASE::$IS_RELEASE"
 echo "::set-env name=IS_SNAPSHOT::$IS_SNAPSHOT"
 echo "::set-env name=HAS_VALID_FORMAT::$HAS_VALID_FORMAT"
-
-# Bump up
-
-#if [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-#  VERSION_PATCH=$(echo "$VERSION" | awk -F"." '{print $NF}')
-#  NEXT_PATCH=$(($VERSION_PATCH + 1))
-#  ROOT_UNTIL=$(echo "$VERSION" | awk -F "." '{print length($0)-length($NF)}')
-#  VERSION_ROOT=$(echo "$VERSION" | cut -c 1-$ROOT_UNTIL)
-#  NEXT_VERSION="$VERSION_ROOT$NEXT_PATCH-SNAPSHOT"
-#  sed -i -e "s/$VERSION_KEY=$VERSION/$VERSION_KEY=0.0.2-SNAPSHOT/" "$VERSION_FILE"
-#  echo "Setting next version $NEXT_VERSION"
-#else
-#  echo "Bump-up will not be executed, the version is a SNAPSHOT or has a bad format"
-#fi
