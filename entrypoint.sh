@@ -13,7 +13,7 @@ else
   IS_RELEASE=false
 fi
 
-if [[ "$VERSION_VALUE" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(M|RC)[0-9]+)?$ ]]; then
+if [[ "$VERSION_VALUE" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(M|RC)[0-9]+)$ ]]; then
   IS_PRE_RELEASE=true
 else
   IS_PRE_RELEASE=false
