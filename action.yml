@@ -1,18 +1,37 @@
-name: Release
-description: 'Process to release a new version and commit the change to the next snapshot'
+name: Properties Version info
+description: 'Get the version information from a properties file'
 inputs:
-  create_branch:
-    description: 'Create a branch for release'
-    required: false
-    default: 'false'
   version_file:
-    description: 'Create a branch for release'
+    description: 'The properties file containing the version info'
+    required: true
+  version_key:
+    description: 'The key of the version value. By default: `version`'
     required: false
-    default: 'false'
+    default: 'version'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.create_branch }}
     - ${{ inputs.version_file }}
+    - ${{ inputs.version_key }}
+
+outputs:
+  version_value:
+    description: 'The version in the properties file'
+
+  is_release:
+    description: 'If the version has a release format'
+
+  is_pre_release:
+    description: 'If the version has a pre-release format'
+
+  is_snapshot:
+    description: 'If the version is a snapshot'
+
+  has_valid_format:
+    description: 'If the version has a right format'
+
+branding:
+  icon: 'file-text'
+  color: blue
