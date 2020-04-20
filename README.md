@@ -1,6 +1,6 @@
 # Version Release Info
 
-A little github action to get information about the version format.
+A little github action to get information about the version release format.
 
 ## Output
 
@@ -19,7 +19,7 @@ This action provides the following information:
 ```yaml
 - name: Get version
   run: echo "::set-env name=git-version::$(git describe --abbrev=0 --tags)"
-uses: AdrianRaFo/version-release-info@v1
+- uses: AdrianRaFo/version-release-info@v1
   with:
     version: env.git-version
 - name: Do something if release

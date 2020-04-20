@@ -1,5 +1,5 @@
 name: version-release-info
-description: 'Get information about the version format'
+description: 'Get information about the version release format'
 inputs:
   version:
     description: 'The version you want information about'
