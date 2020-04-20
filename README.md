@@ -1,4 +1,4 @@
-# Version-release-info
+# Version Release Info
 
 A little github action to get information about the version format.
 
