@@ -1,35 +1,27 @@
-name: Properties Version info
-description: 'Get the version information from a properties file'
+name: version-release-info
+description: 'Get information about the version format'
 inputs:
-  version_file:
-    description: 'The properties file containing the version info'
+  version:
+    description: 'The version you want information about'
     required: true
-  version_key:
-    description: 'The key of the version value. By default: `version`'
-    required: false
-    default: 'version'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.version_file }}
-    - ${{ inputs.version_key }}
+    - ${{ inputs.version }}
 
 outputs:
-  version_value:
-    description: 'The version in the properties file'
-
-  is_release:
+  is-release:
     description: 'If the version has a release format'
 
-  is_pre_release:
+  is-pre-release:
     description: 'If the version has a pre-release format'
 
-  is_snapshot:
+  is-snapshot:
     description: 'If the version is a snapshot'
 
-  has_valid_format:
+  has-valid-format:
     description: 'If the version has a right format'
 
 branding:
