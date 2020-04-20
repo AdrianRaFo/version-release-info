@@ -25,3 +25,7 @@ This action provides the following information:
 - name: Do something if release
   if: steps.is-release == 'true'
 ```
+
+## Thanks
+
+Special thanks to @rachelcarmena for her help with the regex.
