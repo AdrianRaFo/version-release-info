@@ -25,5 +25,5 @@ outputs:
     description: 'If the version has a right format'
 
 branding:
-  icon: 'file-text'
+  icon: 'info'
   color: blue
