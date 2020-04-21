@@ -1,3 +1,4 @@
+#!/bin/sh
 
 #Args
 set -u
