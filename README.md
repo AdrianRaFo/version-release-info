@@ -20,10 +20,14 @@ This action provides the following information:
 - name: Get version
   run: echo "::set-env name=git-version::$(git describe --abbrev=0 --tags)"
 - uses: AdrianRaFo/version-release-info@v1
+  id: v-info #Required to use outputs
   with:
-    version: env.git-version
-- name: Do something if release
-  if: steps.is-release == 'true'
+    version: ${{ env.git-version }}
+- name: Do something if release with env
+  if: env.is-release == 'true'
+  #OR
+- name: Do something if release with outputs
+  if: steps.v-info.outputs.is-release
 ```
 
 ## Thanks
