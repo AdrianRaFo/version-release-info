@@ -31,7 +31,7 @@ else
   HAS_VALID_FORMAT=false
 fi
 
-echo "is-release::$IS_RELEASE"
-echo "is-pre-release::$IS_PRE_RELEASE"
-echo "is-snapshot::$IS_SNAPSHOT"
-echo "has-valid-format::$HAS_VALID_FORMAT"
+echo "::set-output name=is-release::$IS_RELEASE"
+echo "::set-output name=is-pre-release::$IS_PRE_RELEASE"
+echo "::set-output name=is-snapshot::$IS_SNAPSHOT"
+echo "::set-output name=has-valid-format::$HAS_VALID_FORMAT"
